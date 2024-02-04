@@ -1,0 +1,79 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<nav
+    class="flex items-center justify-around py-5 fixed top-0 w-full sticky backdrop-blur-lg bg-opacity-50 bg-black"
+>
+    <a href="#inicio"><h1 class="text-4xl font-bold">Mariano Bazan</h1></a>
+    <button id="button" class="md:hidden">
+        <Icon name="menu" size={50} />
+    </button>
+    <ul
+        id="navbar"
+        class="flex flex-col gap-6 top-20 left-0 bg-slate-900 h-dvh w-full fixed text-2xl pt-6 text-center hidden"
+    >
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li class="flex justify-center gap-6">
+            <a href="https://www.linkedin.com/in/marianobazanc/" target="_blank"
+                ><Icon name="linkedin" class="size-12" /></a
+            >
+            <a href="https://github.com/marianobazanc" target="_blank"
+                ><Icon name="github" class="size-12" /></a
+            >
+        </li>
+    </ul>
+    <ul class="md:flex gap-6 md:text-lg lg:text-xl items-center hidden">
+        <li><a href="#inicio" class="hover:text-slate-300">Inicio</a></li>
+        <li><a href="#experiencia" class="hover:text-slate-300">Experiencia</a></li>
+        <li><a href="#proyectos" class="hover:text-slate-300">Proyectos</a></li>
+        <li><a href="#contacto" class="hover:text-slate-300">Contacto</a></li>
+        <li class="flex gap-4">
+            <a href="https://www.linkedin.com/in/marianobazanc/" target="_blank"
+                ><Icon name="linkedin" class="size-12" /></a
+            >
+            <a href="https://github.com/marianobazanc" target="_blank"
+                ><Icon name="github" class="size-12" /></a
+            >
+        </li>
+    </ul>
+</nav>
+<style>
+    .animation {
+        animation: slide-in 0.1s ease-in-out forwards;
+    }
+
+    @keyframes slide-in {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+<script>
+    const button = document.getElementById("button");
+    const navbar = document.getElementById("navbar");
+    const menuItems = document.querySelectorAll("#navbar li a");
+
+    // Iteramos sobre cada elemento <li> y agregamos un evento de clic
+    menuItems.forEach(function (menuItem) {
+        menuItem.addEventListener("click", function () {
+            // Ocultamos el menú
+            const navbar = document.getElementById("navbar");
+            navbar?.classList.add("hidden");
+            navbar?.classList.remove("animation");
+        });
+    });
+
+    button?.addEventListener("click", function () {
+        navbar?.classList.toggle("hidden");
+        navbar?.classList.toggle("animation");
+    });
+</script>

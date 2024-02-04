@@ -1,0 +1,49 @@
+---
+import { Icon } from "astro-icon/components";
+interface Props {
+	type: "Experience" | "Project";
+	company: string;
+	rol?: string;
+	body: string;
+	date?: string;
+	href: string;
+	skills: string[];
+	img?: string;
+	alt?: string;
+}
+
+const { href, company, body, date, rol, skills, img, alt, type } = Astro.props;
+---
+
+	<a href={href} target="_blank" class=`flex flex-col ${type === "Project" ? "items-center" : ""} sm:items-start m-auto md:flex-row gap-3 sm:w-2/3 lg:w-1/2 bg-gray-900 transition duration-300 ease-in-out hover:bg-gray-800 rounded p-5`>
+		{
+			type === "Experience" ?
+			<span class="text-slate-400 md:w-1/4">{date}</span>
+			:
+			<img src={img} alt={alt} width="300" class="rounded" />
+		}
+		<div class="md:w-2/3 flex flex-col gap-2">
+			<div class="flex gap-1 items-center">
+				<h2 class=" text-lg">{company}</h2>
+				{
+					type === "Experience" ? 
+					<Icon name="circle" class="size-1" />
+					<p class="text-lg">{rol}</p>
+					: ""
+				}
+				<Icon name="arrow" class="ms-1" />
+			</div>
+			<p class="text-slate-400">{body}</p>
+			<ul class="flex flex-wrap">
+				{
+					skills?.map((skill) => (
+						<li>
+							<span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400">
+								{skill}
+							</span>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</a>

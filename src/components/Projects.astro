@@ -1,0 +1,45 @@
+---
+import Card from "./Card.astro";
+---
+
+<section id="proyectos" class="pt-28">
+    <h2 class="text-4xl font-bold text-center">Proyectos</h2>
+    <section class="flex flex-col items-center mt-10">
+        <Card
+            type="Project"
+            company="RC&Asociados"
+            body="Bolsa de trabajo y cursos creada para la expansión de la empresa RC&ASOCIADOS "
+            href="https://www.rcyasociados.ar"
+            skills={['Javascript', 'React', 'Node', 'Express', 'MongoDB', 'Firebase', 'Vercel', 'Hostinger', 'Netlify']}
+            img="https://marianobazan.com/img/rcyasociadospreview.webp"
+            alt="rcyasociados preview"
+        />
+        <Card
+            type="Project"
+            company="Punto Kennedy"
+            body="Landing Page creada para la Universidad Kennedy, con el fin de atraer mas estudiantes a su academia."
+            href="https://www.puntokennedy.com.ar"
+            skills={['HTML', 'CSS', 'Bootstrap', 'Javascript']}
+            img="https://marianobazan.com/img/miniaturaPuntoKennedy.webp"
+            alt="punto kennedy preview"
+        />
+        <Card
+            type="Project"
+            company="Blog Personal"
+            body="Blog personal creada con el fin de mejorar mis habilidades de programacion y a su vez compartir experiencias, conocimientos, etc."
+            href="https://blog.marianobazan.com/"
+            skills={['HTML', 'CSS', 'Bootstrap', 'Javascript', 'React', 'Node', 'Express', 'MongoDB']}
+            img="https://marianobazan.com/img/Blogpersonal.webp"
+            alt="Mariano bazan blog preview"
+        />
+        <Card
+            type="Project"
+            company="Premios Joven UCC"
+            body="Pagina web creada para la Union Comercial Catamarca para promocionar sus premios al emprendedor joven y que a su vez los interesados se inscriban."
+            href="https://marianobazanc.github.io/uccjoven2/"
+            skills={['HTML', 'CSS', 'Javascript']}
+            img="https://marianobazan.com/img/uccjoven.webp"
+            alt="Union Comercial Catamarca Premio Joven preview"
+        />
+    </section>
+</section>
