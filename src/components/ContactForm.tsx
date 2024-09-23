@@ -29,7 +29,9 @@ export const ContactForm: React.FC = () => {
         if (formRef.current) {
             try {
                 setStatus("loading")
-                emailjs.sendForm('SERVICE_KEY', 'TEMPLATE_KEY', formRef.current, 'PUBLIC_KEY')
+                emailjs.sendForm('service_ffmjjim', 'template_hc552jw', formRef.current, {
+                    publicKey: 'EbLknmJl1ZIfehcdf'
+                })
                     .then((result) => {
                         console.log("Cargando...")
                         setStatus("correct")
